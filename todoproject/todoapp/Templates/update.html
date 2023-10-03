@@ -1,0 +1,14 @@
+{% extends 'basetemplate.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'style_updatepage.css' %}">
+
+<form method="POST">
+    {% csrf_token %}
+    {{f.as_p}}
+    <button type="submit">Confirm</button>
+</form>
+
+
+
+{% endblock %}

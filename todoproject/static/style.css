@@ -1,0 +1,17 @@
+
+.banner{
+    margin-top: 10px;
+    background-color: lime;
+    width :100%;
+    height :200px
+
+}
+
+
+.banner-text{
+    top:35%;
+    left:45%;
+    position:absolute;
+    font-family: 'Your Preferred Font', sans-serif;
+}
+

@@ -1,0 +1,15 @@
+{% extends 'basetemplate.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'style_deletepage.css' %}">
+<div class="deleteing_form">
+    <form method="POST">
+        {% csrf_token %}
+        <p><b>Are you sure to delete?</b></p>
+        <button type="submit">Confirm</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

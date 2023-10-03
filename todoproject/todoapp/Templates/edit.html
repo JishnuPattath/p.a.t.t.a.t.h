@@ -1,0 +1,25 @@
+{% extends 'basetemplate.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'style_updatepage.css' %}">
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Task Updation
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

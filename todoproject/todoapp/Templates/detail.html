@@ -1,0 +1,17 @@
+{% extends 'basetemplate.html' %}
+{% load static %}
+{% block body %}
+
+<div class="shadow card">
+    <div class="card-body">
+      <h5 class="card-title">{{task.task_name}}</h5>
+      <p><b>{{task.priority}}<b></b></p>
+      <p><b>{{task.date}}<b></b></p>
+      <a class="btn btn-danger" href="{% url 'delete' task.id %}">Done</a>
+      <a class="btn btn-primary" href="{% url 'update' task.id %}">Update</a>
+    </div>
+</div>
+
+
+
+{% endblock %}
