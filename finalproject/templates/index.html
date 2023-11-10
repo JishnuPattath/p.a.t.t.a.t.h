@@ -1,0 +1,72 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %} 
+
+<br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card_edit">
+                <img class="card-img-top fixed-height-img" src="{% static 'images/card1.jpg' %}" alt="Card image cap ">
+                <div class="card-body">
+                    <h5 class="card-title">Main block</h5>
+                    <p class="card-text">The main block of the university stands as an architectural marvel, a hub where knowledge converges within its hallowed walls.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card_edit">
+                <img class="card-img-top fixed-height-img" src="{% static 'images/card2.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Workshop</h5>
+                    <p class="card-text">Within the main block's workshop, creativity ignites as hands mold ideas into tangible innovations, bridging theory and practice in a symphony of.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card_edit">
+                <img class="card-img-top" src="{% static 'images/card3.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Recreation area</h5>
+                    <p class="card-text">The recreation area beckons with vibrant energy, a haven where laughter dances on the breeze, and friendships flourish amidst games and relaxation. </p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+        <div class="row">
+            <div class="col text-center">
+                <p>Attending a university is like embarking on a grand intellectual journey, where the pathways of knowledge intersect and
+                diverge in a mesmerizing dance of academia. Each day is an opportunity to engage with a diverse tapestry of ideas,
+                cultures, and experiences, as you navigate through bustling corridors teeming with students from all walks of life. The
+                campus itself seems like a microcosm of the world, with its sprawling lawns, modern architectural wonders, and the
+                timeless charm of historic buildings that whisper tales of generations past.
+                
+                As you step into lecture halls and classrooms, you become a participant in a symphony of learning, led by professors who
+                are not just instructors, but mentors and guides. The exchange of ideas is electrifying, as debates and discussions
+                unravel, shaping your perspective and challenging your assumptions. Late nights in the library become a rite of passage,
+                where the soft rustling of pages and the faint glow of laptops merge into a harmonious backdrop for the pursuit of
+                knowledge.</p>
+                </div>
+        </div>
+    </div>
+
+<div class="container mt-4">
+        <div class="row">
+            <div class="col text-center">
+                <a href="{% url 'credentials_app:login' %}" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+{% endblock %}

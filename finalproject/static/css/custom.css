@@ -1,0 +1,16 @@
+/* .container {
+    max-width: 10px;
+    margin: 0 auto;
+} */
+
+
+.fixed-height-img {
+    height: 200px; /* Adjust the desired fixed height value */
+    object-fit: cover; /* Maintain aspect ratio and cover area */
+}
+
+.card_edit {
+    background-color: #e1f2ff;
+     color:#000000; /* Text color */
+   
+   }
