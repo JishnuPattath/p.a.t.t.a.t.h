@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'login/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'login/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+
+    <title>Register</title>
+  </head>
+  <body>
+
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url({% static 'login/images/register.jpg' %});"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <h3>Register to <strong>Kerala Technical University</strong></h3>
+            <form action="#" method="post">
+              <div class="form-group first">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter your username">
+              </div>
+              <div class="form-group last mb-1">
+                {% csrf_token %}
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password0" placeholder="Enter your password">
+              </div>
+              <div class="form-group last mb-1">
+                {% csrf_token %}
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password1" placeholder="Confirm your password">
+              </div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption"></span>
+                </label>
+              </div>
+
+              <input type="submit" value="Submit" class="btn btn-block btn-primary">
+
+            </form>
+            {% for msg in messages %}
+             <h2>{{msg}}</h2>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+    <script src="{% static 'login/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'login/js/popper.min.js' %}"></script>
+    <script src="{% static 'login/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'login/js/main.js' %}"></script>
+  </body>
+</html>

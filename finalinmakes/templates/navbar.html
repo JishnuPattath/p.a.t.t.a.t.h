@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Store</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="{% url 'college_app:home' %}">Kerala Technical University</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" data-toggle="dropdown">Department</a>
+                <div class="dropdown-menu" aria-labelledby="departmentDropdown">
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+                        <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Civil_engineering">Civil Engineering</a>
+                        <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Electrical_engineering">Electrical Engineering</a>
+                        <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Electronic_engineering">Electronics Engineering</a>
+                        <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mechanical_engineering">Mechanical Engineering</a>
+                    <!-- Add more department links here -->
+                </div>
+            </li>
+        </ul>
+
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav ml-auto"> <!-- Use ml-auto to push items to the right -->
+            <li class="nav-item"><a class="nav-link" href="">Hello {{user.username}}</a></li>
+            <li class="nav-item"><a class="nav-link" href="credentials_app/logout">Logout</a></li>
+          </ul>
+        {% else %}
+        <ul class="navbar-nav ml-auto"> <!-- Use ml-auto to push items to the right -->
+            <li class="nav-item"><a class="nav-link" href="{% url 'credentials_app:login' %}">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'credentials_app:register' %}">Register</a></li>
+          </ul>
+        {% endif %}
+
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

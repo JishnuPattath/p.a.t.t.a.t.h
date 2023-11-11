@@ -1,0 +1,73 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+
+<br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card_edit">
+                <img class="card-img-top fixed-height-img" src="{% static 'images/ktu.jpeg' %}" alt="Card image cap ">
+                <div class="card-body">
+                    <h5 class="card-title">Main block</h5>
+                    <p class="card-text">The main block of the university stands as an architectural marvel, a hub where knowledge converges within its hallowed walls.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card_edit">
+                <img class="card-img-top fixed-height-img" src="{% static 'images/office.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Office</h5>
+                    <p class="card-text">The main office of the KTU is situated in the College of Engineering Trivandrum. From here it controls every colleges and institutes.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card_edit">
+                <img class="card-img-top" src="{% static 'images/exams.jpeg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Examination</h5>
+                    <p class="card-text">The examination is conducted in each semester accordingly. The marks of the students will be published through the ktu site itself. </p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card_edit">
+                <img class="card-img-top" src="{% static 'images/sports.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Sports</h5>
+                    <p class="card-text">Explore the vibrant sports culture at KTU, where students engage in various athletic activities to promote health and teamwork.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col text-center">
+            <p>APJ Abdul Kalam Technological University is a state public technological university headquartered at Thiruvananthapuram, Kerala, India. KTU offers professional degrees in engineering, technology, and management-related streams and has advanced courses and syllabi compared to its predecessor universities in the state.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col text-center">
+            <a href="{% url 'credentials_app:login' %}" class="btn btn-primary">Login</a>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+{% endblock %}

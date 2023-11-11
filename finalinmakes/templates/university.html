@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Title</div>
+
+                <div class="card-body">
+                    <button id="showFormButton" class="btn btn-primary mb-4">Show Form</button>
+
+                    <div id="formContainer" style="display: none;">
+                        <form id="personal-info-form">
+                            <!-- ... (your form fields) ... -->
+                            <form id="personal-info-form">
+                                <div class="mb-4">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="dob">Date of Birth:</label>
+                                    <input type="date" class="form-control" name="dob" id="dob">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="age">Age:</label>
+                                    <input type="number" class="form-control" name="age" id="age">
+                                </div>
+                                <!-- <div class="mb-4">
+                                    <label for="gender">Gender:</label>
+                                    <select class="form-control" name="gender" id="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div> -->
+                                <div class="mb-4">
+                                    <label>Gender:</label><br>
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male">Male</label><br>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">Female</label><br>
+                                    <input type="radio" id="other" name="gender" value="other">
+                                    <label for="other">Other</label>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="tel" class="form-control" name="phone" id="phone">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" name="email" id="email">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="address">Address:</label>
+                                    <textarea class="form-control" name="address" id="address" rows="3"></textarea>
+                                </div>
+                                <h10>Department:</h10>
+                                <select class="custom-select mb-4" name="course"
+                                    hx-get="{% url 'credentials_app:modules' %}" hx-trigger="change"
+                                    hx-target="#modules">
+
+                                    <option selected>Open this select menu</option>
+                                    {% for course in courses %}
+                                    <option value="{{course.pk}}">{{ course.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <h10>Courses:</h10>
+                                <div id="modules">
+                                    {% include 'partials/modules.html' %}
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="purpose">Purpose:</label>
+                                    <select class="form-control" name="purpose" id="purpose">
+                                        <option value="enquiry">For Enquiry</option>
+                                        <option value="order">Place Order</option>
+                                        <option value="return">Return</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label>Materials Provided:</label>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="materials"
+                                            value="notebook" id="notebook">
+                                        <label class="form-check-label" for="notebook">Debit Note Book</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="materials" value="pen"
+                                            id="pen">
+                                        <label class="form-check-label" for="pen">Pen</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" name="materials" value="papers"
+                                            id="papers">
+                                        <label class="form-check-label" for="papers">Exam Papers</label>
+                                    </div>
+                                    <!-- Add more checkboxes as needed -->
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+
+                            <!-- <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div> -->
+                        </form>
+                    </div>
+
+                    <div id="confirmation" style="display: none;">
+                        <p class="alert alert-success">Order Confirmed</p>
+                        <a href="{% url 'college_app:home' %}" class="btn btn-primary">Return to Home Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("personal-info-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        document.getElementById("personal-info-form").style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+    });
+
+    document.getElementById('showFormButton').addEventListener('click', function () {
+        document.getElementById('formContainer').style.display = 'block';
+    });
+</script>
+{% endblock %}
